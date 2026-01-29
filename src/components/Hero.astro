@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/hero.png';
 ---
 
 <section class="relative pt-32 pb-20 px-6 overflow-hidden">
@@ -40,11 +42,16 @@
       </a>
     </div>
 
-    <!-- Phone mockup placeholder -->
+    <!-- Phone mockup -->
     <div class="relative max-w-sm mx-auto" data-animate="fade-up">
-      <div class="aspect-[9/19] bg-surface-light rounded-[3rem] border border-white/10 shadow-2xl shadow-brand/10 flex items-center justify-center">
-        <p class="text-text-secondary text-sm">App screenshot here</p>
-      </div>
+      <Image
+        src={heroImage}
+        alt="Goof Sports app showing live BUF at KC game with odds comparison"
+        class="w-full h-auto drop-shadow-2xl"
+        widths={[400, 600, 800]}
+        sizes="(max-width: 640px) 320px, 400px"
+        loading="eager"
+      />
       <!-- Glow under phone -->
       <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-3/4 h-20 bg-brand/30 rounded-full blur-[40px]"></div>
     </div>
