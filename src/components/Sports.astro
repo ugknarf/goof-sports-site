@@ -1,0 +1,30 @@
+---
+const sports = [
+  { name: 'NFL', icon: '🏈' },
+  { name: 'NBA', icon: '🏀' },
+  { name: 'MLB', icon: '⚾' },
+  { name: 'NHL', icon: '🏒' },
+  { name: 'NCAAB', icon: '🎓' },
+  { name: 'WNBA', icon: '🏀' },
+];
+---
+
+<section id="sports" class="py-24 px-6 bg-surface-light/30">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="font-heading font-800 text-4xl md:text-5xl tracking-tight mb-4" data-animate="fade-up">
+      Every sport. Every game.
+    </h2>
+    <p class="text-text-secondary text-lg max-w-xl mx-auto mb-16" data-animate="fade-up">
+      Full coverage across the leagues that matter.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-6" data-animate="fade-up">
+      {sports.map((sport) => (
+        <div class="bg-surface-light border border-white/5 rounded-2xl px-8 py-6 flex flex-col items-center gap-3 min-w-[120px] hover:border-brand/30 hover:bg-brand/5 transition-all duration-300">
+          <span class="text-4xl">{sport.icon}</span>
+          <span class="font-heading font-700 text-sm tracking-wide">{sport.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

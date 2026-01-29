@@ -1,0 +1,61 @@
+---
+const features = [
+  {
+    icon: '📊',
+    title: 'Odds Comparison',
+    description: 'View lines across every major sportsbook in one unified interface. Find the best value instantly.',
+  },
+  {
+    icon: '🔔',
+    title: 'Custom Alerts',
+    description: 'Set notifications for line movements. Get pinged when odds hit your target.',
+  },
+  {
+    icon: '🎨',
+    title: 'Your Dashboard',
+    description: 'Pick your sportsbooks, favorite your teams, customize everything to how you bet.',
+  },
+  {
+    icon: '📸',
+    title: 'Share Moments',
+    description: 'Capture and share game highlights, bad beats, and big wins with your crew.',
+  },
+  {
+    icon: '⚡',
+    title: 'Quick Bet Slip',
+    description: 'Tap any line to jump straight to your sportsbook with the bet pre-loaded.',
+  },
+  {
+    icon: '📱',
+    title: 'Live Activities',
+    description: 'Pregame and live odds right on your lock screen. Never miss a line move.',
+  },
+];
+---
+
+<section id="features" class="py-24 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="font-heading font-800 text-4xl md:text-5xl tracking-tight mb-4" data-animate="fade-up">
+        Everything you need
+      </h2>
+      <p class="text-text-secondary text-lg max-w-xl mx-auto" data-animate="fade-up">
+        Built for bettors who want speed, clarity, and an edge.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map((feature, i) => (
+        <div
+          class="group bg-surface-light/50 hover:bg-surface-light border border-white/5 hover:border-white/10 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1"
+          data-animate="fade-up"
+          style={`--delay: ${i * 80}ms`}
+        >
+          <div class="text-4xl mb-5">{feature.icon}</div>
+          <h3 class="font-heading font-700 text-xl mb-3">{feature.title}</h3>
+          <p class="text-text-secondary leading-relaxed">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

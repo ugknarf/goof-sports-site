@@ -1,0 +1,25 @@
+---
+const sportsbooks = [
+  'DraftKings',
+  'FanDuel',
+  'BetMGM',
+  'Caesars',
+  'ESPN BET',
+  'Fanatics',
+];
+---
+
+<section class="py-16 px-6 border-y border-white/5">
+  <div class="max-w-7xl mx-auto">
+    <p class="text-center text-sm text-text-secondary font-medium uppercase tracking-widest mb-8">
+      Odds from the top sportsbooks
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-8 md:gap-14" data-animate="fade-up">
+      {sportsbooks.map((name) => (
+        <div class="text-text-secondary/50 hover:text-text-secondary transition-colors text-lg font-heading font-700">
+          {name}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

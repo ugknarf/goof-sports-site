@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Sportsbooks from '../components/Sportsbooks.astro';
+import Features from '../components/Features.astro';
+import Sports from '../components/Sports.astro';
+import Download from '../components/Download.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Goof Sports - Sweat. Bet. Chat.">
+  <Nav />
+  <main>
+    <Hero />
+    <Sportsbooks />
+    <Features />
+    <Sports />
+    <Download />
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  import { animate, inView } from 'motion';
+
+  const elements = document.querySelectorAll('[data-animate="fade-up"]');
+
+  elements.forEach((el) => {
+    const htmlEl = el as HTMLElement;
+    htmlEl.style.opacity = '0';
+    htmlEl.style.transform = 'translateY(24px)';
+
+    inView(htmlEl, () => {
+      const delay = parseFloat(htmlEl.style.getPropertyValue('--delay') || '0') / 1000;
+      animate(
+        htmlEl,
+        { opacity: [0, 1], transform: ['translateY(24px)', 'translateY(0)'] },
+        { duration: 0.6, delay, easing: [0.22, 1, 0.36, 1] }
+      );
+    }, { margin: '-50px' });
+  });
+</script>
